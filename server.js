@@ -2,13 +2,10 @@ import express from "express"
 import productRoutes from "./routes/productRoutes.route.js"
 import cartRoutes from "./routes/cartRoutes.route.js"
 import cors from "cors"
-import dotenv from "dotenv"
 import { connectDB } from "./DB.js";
 import userRoutes from "./routes/userRoutes.route.js"
 
 
-// Load environment variables (e.g., PORT, DB URI)
-dotenv.config();
 // Initialize express application
 const app = express()
 
@@ -27,7 +24,7 @@ app.use("/api/cart", cartRoutes)
 app.use("/api/users", userRoutes)
 
 // Define the port from environment or default to 3001
-const PORT = process.env.PORT || 3001
+const PORT = 3001
 app.listen(PORT, () => {
     console.log(`Server running on PORT http://localhost:${PORT}`);
 })
